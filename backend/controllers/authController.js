@@ -6,6 +6,9 @@ const generateToken = (id) => {
         expiresIn: '1d', // Token expires in 1 day
     });
 };
+<div>
+    <p>hi ra ungaaa </p>
+</div>
 
 exports.loginAdmin = async (req, res) => {
     const { email, password } = req.body;
@@ -26,4 +29,4 @@ exports.loginAdmin = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };//hi
-// backend/controllers/authController.js
+
