@@ -26,3 +26,4 @@ exports.loginAdmin = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };//hi
+// backend/controllers/authController.js
