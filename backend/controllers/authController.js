@@ -6,6 +6,9 @@ const generateToken = (id) => {
         expiresIn: '1d', // Token expires in 1 day
     });
 };
+<div>
+    <p>hi</p>
+</div>
 
 exports.loginAdmin = async (req, res) => {
     const { email, password } = req.body;
