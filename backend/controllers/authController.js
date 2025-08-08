@@ -1,4 +1,4 @@
-const User = require('../models/Admin'); // Make sure you import your User model
+const User = require('../models/Admin'); // Make sure you import your User model hiiii
 const bcrypt = require('bcryptjs');     // Import bcrypt for password comparison
 const jwt = require('jsonwebtoken');  // Import jwt for token creation
 
