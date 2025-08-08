@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Define the schema for a complaint
 const complaintSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -11,6 +10,11 @@ const complaintSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  category: {
+    type: String,
+    enum: ['Sanitation', 'Infrastructure', 'Ragging / Bullying', 'Security', 'Faculty', 'Other'],
+    required: true
+  },
   status: {
     type: String,
     enum: ['Pending', 'In Progress', 'Resolved'],
@@ -18,13 +22,15 @@ const complaintSchema = new mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User' // Reference to a User model, if you have one
+    ref: 'User'
+  },
+  filePath: {
+    type: String
   }
 }, {
-  timestamps: true // Automatically adds createdAt and updatedAt fields
+  timestamps: true
 });
 
-// Create and export the Complaint model
 const Complaint = mongoose.model('Complaint', complaintSchema);
 
 module.exports = Complaint;

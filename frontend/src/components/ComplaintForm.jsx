@@ -86,7 +86,7 @@ function ComplaintForm() {
                     <select name="category" value={formData.category} onChange={handleTextChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         <option value="Sanitation">Sanitation</option>
                         <option value="Infrastructure">Infrastructure</option>
-                        <option value="Ragging">Ragging / Bullying</option>
+                        <option value="Ragging / Bullying">Ragging / Bullying</option>
                         <option value="Security">Security</option>
                         <option value="Faculty">Faculty</option>
                         <option value="Other">Other</option>

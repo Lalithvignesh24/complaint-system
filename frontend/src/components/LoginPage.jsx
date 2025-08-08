@@ -12,8 +12,8 @@ function LoginPage() {
         e.preventDefault();
         try {
             const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-            // Store the token in localStorage
-            localStorage.setItem('adminToken', data.token);
+            // Store the token in localStorage (use 'token' for consistency)
+            localStorage.setItem('token', data.token);
             // Redirect to the admin dashboard
             navigate('/admin');
         } catch (err) {
