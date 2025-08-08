@@ -1,11 +1,11 @@
-// backend/models/Complaint.js
-
 const mongoose = require('mongoose');
 
+// Define the schema for a complaint
 const complaintSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   description: {
     type: String,
@@ -16,15 +16,15 @@ const complaintSchema = new mongoose.Schema({
     enum: ['Pending', 'In Progress', 'Resolved'],
     default: 'Pending'
   },
-  submittedBy: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User' // Assuming you have a User model
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now
+    ref: 'User' // Reference to a User model, if you have one
   }
+}, {
+  timestamps: true // Automatically adds createdAt and updatedAt fields
 });
 
-// The 'Complaint' model will use the 'complaints' collection in the database
-module.exports = mongoose.model('Complaint', complaintSchema);
+// Create and export the Complaint model
+const Complaint = mongoose.model('Complaint', complaintSchema);
+
+module.exports = Complaint;
